@@ -7,13 +7,17 @@ const app = express();
 
 
 //middleware
-app.use(express.json());
+//app.use(express.json());
+app.use(cors({ origin: true }));
 app.use(cors());
 
 //Routes
+{/*
 app.get("/", (req,res)=>{
     res.send("hello world")
 })
+*/}
+app.get("/", (request, response) => response.status(200).send("hello world"));
 
 {/*
 app.post("/payment", (req,res)=>{
