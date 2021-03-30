@@ -7,8 +7,8 @@ const app = express();
 
 
 //middleware
-//app.use(express.json());
-app.use(cors({ origin: true }));
+app.use(express.json());
+//app.use(cors({ origin: true }));
 app.use(cors());
 
 //Routes
@@ -52,5 +52,4 @@ app.post("/payments/create", async (request, response) => {
   });
 });
 //Listen
-exports.api = functions.https.onRequest(app);
 app.listen(process.env.PORT || 5000,()=> console.log("listening on port 5000"))
